@@ -1,0 +1,123 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.TeacherVMs
+@model TeacherCreateVM
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Teacher Create Form</h4>
+                <form enctype="multipart/form-data" asp-action="create" method="post" class="forms-sample">
+
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input asp-for="Photo" type="file" class="form-control" placeholder="Upload Photo">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Position"></label>
+                        <input asp-for="Position" class="form-control" placeholder="Position">
+                        <span class="text-danger" asp-validation-for="Position"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="About"></label>
+                        <textarea asp-for="About" class="form-control" placeholder="About"></textarea>
+                        <span class="text-danger" asp-validation-for="About"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Degree"></label>
+                        <input asp-for="Degree" class="form-control" placeholder="Degree">
+                        <span class="text-danger" asp-validation-for="Degree"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Experience"></label>
+                        <input asp-for="Experience" class="form-control" placeholder="Experience">
+                        <span class="text-danger" asp-validation-for="Experience"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Hobbies"></label>
+                        <input asp-for="Hobbies" class="form-control" placeholder="Hobbies">
+                        <span class="text-danger" asp-validation-for="Hobbies"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Faculty"></label>
+                        <input asp-for="Faculty" class="form-control" placeholder="Faculty">
+                        <span class="text-danger" asp-validation-for="Faculty"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Phone"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="Phone">
+                        <span class="text-danger" asp-validation-for="Phone"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Skype"></label>
+                        <input asp-for="Skype" class="form-control" placeholder="Skype">
+                        <span class="text-danger" asp-validation-for="Skype"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Mail"></label>
+                        <input asp-for="Mail" type="email" class="form-control" placeholder="Mail">
+                        <span class="text-danger" asp-validation-for="Mail"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Language"></label>
+                        <input asp-for="Language" type="number" class="form-control" placeholder="Language">
+                        <span class="text-danger" asp-validation-for="Language"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="TeamLeader"></label>
+                        <input asp-for="TeamLeader" type="number" class="form-control" placeholder="Team Leader">
+                        <span class="text-danger" asp-validation-for="TeamLeader"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Development"></label>
+                        <input asp-for="Development" type="number" class="form-control" placeholder="Development">
+                        <span class="text-danger" asp-validation-for="Development"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Design"></label>
+                        <input asp-for="Design" type="number" class="form-control" placeholder="Design">
+                        <span class="text-danger" asp-validation-for="Design"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Innovation"></label>
+                        <input asp-for="Innovation" type="number" class="form-control" placeholder="Innovation">
+                        <span class="text-danger" asp-validation-for="Innovation"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Communication"></label>
+                        <input asp-for="Communication" type="number" class="form-control" placeholder="Communication">
+                        <span class="text-danger" asp-validation-for="Communication"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Create</button>
+                    <a asp-action="index" class="btn btn-light">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

@@ -1,0 +1,35 @@
+﻿@using BackEndProject_Edu.Models
+@model Category
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+
+
+           
+
+            <br />
+            <h4>Category Name:</h4><p>@Model.Name</p>
+            <br />
+      @*       <h4>Date:</h4>
+            <p>@Model.CreatedDate.ToString("dd,MMMM,yyyy")</p> *@
+
+            <br />
+            <h1>Courses</h1>
+            @foreach (var course in Model.Course)
+            {
+                <li>
+                    <h4>@course.Name</h4>
+                    <p>@course.Desc</p>
+                </li>
+            }
+
+            <br />
+
+            <a asp-action="index" class="btn btn-outline-dark">Go Back</a>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

@@ -1,0 +1,82 @@
+﻿@model CourseDetailVM
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+
+
+            <img src="~/img/course/@Model.ImgUrl" width="300" height="150" />
+
+            <br />
+            <h4>Name-<span>@Model.Name</span></h4>
+            <br />
+
+
+            <h4>@Model.Date?.ToString("dd.MM.yyyy")</h4>
+
+
+            <br />
+
+            <p>
+                Course About :@Model.About
+            </p>
+
+            <br />
+
+            <p>
+                Course Desc:@Model.Desc
+            </p>
+
+            <br />
+
+            <p>
+                Course Apply:@Model.Apply
+            </p>
+
+            <br />
+
+            <p>
+                Course Certification:@Model.Certification
+            </p>
+
+            <br />
+            @*   todo:features and coursetags *@
+            <p>
+                Course Features:
+                @foreach (var feature in Model.CourseFeatures)
+                {
+                    <li>
+                        Start Date: @feature.StartDate.ToString("dd.MM.yyyy") <br />
+                        Duration: @feature.Duration <br />
+                        Hours: @feature.Hours <br />
+                        Skill: @feature.Skill <br />
+                        Language: @feature.Language <br />
+                        Student Number: @feature.StuNum <br />
+                        Assessment: @feature.Assesment <br />
+                        @* Price: @feature.Price *@
+                    </li>
+                }
+            </p>
+            <br />
+
+            <p>
+                <h1>Course Category:</h1>
+                @Model.CategoryName
+            </p>
+            <br />
+            <p>
+                Course Tags:
+                <ul>
+                    @foreach (var tag in Model.CourseTags)
+                    {
+                        <li>@tag.Name</li>
+                    }
+                </ul>
+            </p>
+            <a asp-action="index" class="btn btn-outline-dark">Go Back</a>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

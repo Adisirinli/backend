@@ -1,0 +1,87 @@
+﻿
+@page
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="row p-1">
+                <div class="row p-1">
+                    <div class="col-1">User</div>
+                    <div class="col-5"><input type="text" value="@(User.Identity.IsAuthenticated?ViewBag.ExistUser:null)" disabled id="userInput" /></div>
+                </div>
+
+
+            </div>
+          
+          
+            <div class="row p-1">
+                <div class="col-6">
+                    <hr />
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6">
+                    <ul id="messagesList"></ul>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="row p-1">
+                <div class="col-1">Message</div>
+              
+                <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6 text-end">
+                    <input type="button" id="sendButton" value="Send Message" />
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <ul class="list-group">
+                @foreach (var user in ViewBag.Users)
+                {
+                    <li class="list-group-item">
+                        <span id="@user.Id" class="test @(user.ConnectionId==null?"bg-offline":"bg-online")">
+
+                        </span>
+                        @user.UserName
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js"
+            integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+    <script>
+
+        var connection = new signalR.HubConnectionBuilder().withUrl("/testhub").build();
+        connection.start();
+
+        document.getElementById("sendButton").addEventListener("click", function () {
+            var user = document.getElementById("userInput").value;
+            var message = document.getElementById("messageInput").value;
+            connection.invoke("sendmessage", user, message)
+        })
+
+        connection.on("ReceiveMessage", function (us, mes, date) {
+            var li = document.createElement("li");
+            li.innerText = us + " " + mes + " " + date
+            document.getElementById("messagesList").append(li);
+        })
+        connection.on("UserConnected", function (userId) {
+            document.getElementById(userId).classList.remove("bg-offline")
+            document.getElementById(userId).classList.add("bg-online")
+        })
+        connection.on("UserDisConnected", function (userId) {
+            document.getElementById(userId).classList.add("bg-offline")
+            document.getElementById(userId).classList.remove("bg-online")
+        })
+    </script>
+
+}

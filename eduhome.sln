@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eduhome", "eduhome\eduhome.csproj", "{89B8AEFE-9BD6-4501-8028-A75A48708135}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89B8AEFE-9BD6-4501-8028-A75A48708135}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B8AEFE-9BD6-4501-8028-A75A48708135}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B8AEFE-9BD6-4501-8028-A75A48708135}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B8AEFE-9BD6-4501-8028-A75A48708135}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A08275CF-1FFF-45FF-8B69-1740C41C4B13}
+	EndGlobalSection
+EndGlobal

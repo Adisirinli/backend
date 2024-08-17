@@ -1,0 +1,104 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.TeacherVMs
+@model TeacherDetailVM
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+
+
+            <img src="~/img/teacher/@Model.ImgUrl" width="300" height="150" />
+
+            <br />
+            <h4>Name-<span>@Model.Name</span></h4>
+            <br />
+
+            
+
+
+            <br />
+
+            <p>
+                Position  :@Model.Position
+            </p>
+
+            <br />
+
+            <p>
+                 About :@Model.About
+            </p>
+
+            <br />
+
+            <p>
+                Degree:@Model.Degree
+            </p>
+
+            <br />
+
+            <p>
+               Experiences:@Model.Experience
+            </p>
+
+            <p>
+                Hobbies :@Model.Hobbies
+            </p>
+
+            <br />
+
+            <p>
+                Faculty:@Model.Faculty
+            </p>
+
+            <br />
+
+            <p>
+                Phone:@Model.Phone
+            </p>
+            <br />
+            <p>
+                Skype :@Model.Skype
+            </p>
+
+            <br />
+
+            <p>
+                Mail:@Model.Mail
+            </p>
+
+            <br />
+
+            <p>
+                Language:@Model.Language
+            </p>
+
+            <p>
+                TeamLeader :@Model.TeamLeader
+            </p>
+
+            <br />
+
+            <p>
+                Design:@Model.Design
+            </p>
+
+            <br />
+            <p>
+                Innovation :@Model.Innovation
+            </p>
+
+            <br />
+
+            <p>
+                Communication:@Model.Communication
+            </p>
+
+            <br />
+
+         
+            <a asp-action="index" class="btn btn-outline-dark">Go Back</a>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

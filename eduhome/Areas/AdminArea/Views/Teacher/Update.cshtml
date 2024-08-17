@@ -1,0 +1,144 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.TeacherVMs
+@model TeacherUpdateVM
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post" asp-action="update" class="forms-sample">
+                    @* Display the current photo *@
+                    <img src="~/img/teacher/@Model.ImgUrl" width="300" height="150" />
+
+                    <h4 class="card-title">Teacher Update Form</h4>
+
+                    @* Name Field *@
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+
+                    @* Position Field *@
+                    <div class="form-group">
+                        <label asp-for="Position"></label>
+                        <input asp-for="Position" class="form-control" placeholder="Position">
+                        <span class="text-danger" asp-validation-for="Position"></span>
+                    </div>
+
+                    @* About Field *@
+                    <div class="form-group">
+                        <label asp-for="About"></label>
+                        <input asp-for="About" class="form-control" placeholder="About">
+                        <span class="text-danger" asp-validation-for="About"></span>
+                    </div>
+
+                    @* Degree Field *@
+                    <div class="form-group">
+                        <label asp-for="Degree"></label>
+                        <input asp-for="Degree" class="form-control" placeholder="Degree">
+                        <span class="text-danger" asp-validation-for="Degree"></span>
+                    </div>
+
+                    @* Experience Field *@
+                    <div class="form-group">
+                        <label asp-for="Experience"></label>
+                        <input asp-for="Experience" class="form-control" placeholder="Experience">
+                        <span class="text-danger" asp-validation-for="Experience"></span>
+                    </div>
+
+                    @* Hobbies Field *@
+                    <div class="form-group">
+                        <label asp-for="Hobbies"></label>
+                        <input asp-for="Hobbies" class="form-control" placeholder="Hobbies">
+                        <span class="text-danger" asp-validation-for="Hobbies"></span>
+                    </div>
+
+                    @* Faculty Field *@
+                    <div class="form-group">
+                        <label asp-for="Faculty"></label>
+                        <input asp-for="Faculty" class="form-control" placeholder="Faculty">
+                        <span class="text-danger" asp-validation-for="Faculty"></span>
+                    </div>
+
+                    @* Phone Field *@
+                    <div class="form-group">
+                        <label asp-for="Phone"></label>
+                        <input asp-for="Phone" class="form-control" placeholder="Phone">
+                        <span class="text-danger" asp-validation-for="Phone"></span>
+                    </div>
+
+                    @* Skype Field *@
+                    <div class="form-group">
+                        <label asp-for="Skype"></label>
+                        <input asp-for="Skype" class="form-control" placeholder="Skype">
+                        <span class="text-danger" asp-validation-for="Skype"></span>
+                    </div>
+
+                    @* Mail Field *@
+                    <div class="form-group">
+                        <label asp-for="Mail"></label>
+                        <input asp-for="Mail" class="form-control" placeholder="Mail">
+                        <span class="text-danger" asp-validation-for="Mail"></span>
+                    </div>
+
+                    @* Language Field *@
+                    <div class="form-group">
+                        <label asp-for="Language"></label>
+                        <input asp-for="Language" class="form-control" placeholder="Language">
+                        <span class="text-danger" asp-validation-for="Language"></span>
+                    </div>
+
+                    @* Team Leader Field *@
+                    <div class="form-group">
+                        <label asp-for="TeamLeader"></label>
+                        <input asp-for="TeamLeader" class="form-control" placeholder="Team Leader">
+                        <span class="text-danger" asp-validation-for="TeamLeader"></span>
+                    </div>
+
+                    @* Development Field *@
+                    <div class="form-group">
+                        <label asp-for="Development"></label>
+                        <input asp-for="Development" class="form-control" placeholder="Development">
+                        <span class="text-danger" asp-validation-for="Development"></span>
+                    </div>
+
+                    @* Design Field *@
+                    <div class="form-group">
+                        <label asp-for="Design"></label>
+                        <input asp-for="Design" class="form-control" placeholder="Design">
+                        <span class="text-danger" asp-validation-for="Design"></span>
+                    </div>
+
+                    @* Innovation Field *@
+                    <div class="form-group">
+                        <label asp-for="Innovation"></label>
+                        <input asp-for="Innovation" class="form-control" placeholder="Innovation">
+                        <span class="text-danger" asp-validation-for="Innovation"></span>
+                    </div>
+
+                    @* Communication Field *@
+                    <div class="form-group">
+                        <label asp-for="Communication"></label>
+                        <input asp-for="Communication" class="form-control" placeholder="Communication">
+                        <span class="text-danger" asp-validation-for="Communication"></span>
+                    </div>
+
+                    @* Photo Field *@
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input asp-for="Photo" type="file" class="form-control" placeholder="Upload Photo">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+
+                    @* Update Button *@
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <a asp-action="index" class="btn btn-light">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

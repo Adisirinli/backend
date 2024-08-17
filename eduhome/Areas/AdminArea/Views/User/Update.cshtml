@@ -1,0 +1,40 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.UserVMs
+@model UserUpdateVM
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form enctype="multipart/form-data" method="post" class="forms-sample">
+
+
+                    <h4 class="card-title">User Update form</h4>
+
+
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input asp-for="UserName" class="form-control" placeholder="UserName">
+                        <span class="text-danger" asp-validation-for="UserName"></span> @* //errorlari gosderir *@
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FullName"></label>
+                        <input asp-for="FullName" class="form-control" placeholder="FullName">
+                        <span class="text-danger" asp-validation-for="FullName"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email"></label>
+                        <input asp-for="Email" class="form-control" placeholder="Email" disabled="disabled">
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <a asp-action="index" class="btn btn-light">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

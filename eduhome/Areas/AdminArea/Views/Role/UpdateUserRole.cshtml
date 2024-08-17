@@ -1,0 +1,14 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.RoleVMs
+@model RoleUpdateVM
+
+<h1>@Model.UserName</h1>
+
+
+<form method="post">
+
+    @foreach (var role in Model.Roles)
+    {
+        <input name="newUserRoles" type="checkbox" value="@role.Name" @(Model.UserRoles.Contains(role.Name) ? "checked" : "") /> @role.Name <br /><br />
+    }
+    <button type="submit">Update</button>
+</form>

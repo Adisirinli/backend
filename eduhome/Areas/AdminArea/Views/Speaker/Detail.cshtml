@@ -1,0 +1,36 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.SpeakerVMs
+@model SpeakerDetailVM
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+
+
+            <img src="~/img/event/@Model?.ImgUrl" width="300" height="150" />
+
+            <br />
+            <h4>Name:</h4><p>@Model?.Name</p>
+            <br />
+            <h4>Position:</h4>
+            <p>@Model.Position</p>
+
+            <br />
+
+
+            <br />
+            <h3>Event:</h3>
+          
+                <p>
+                    @Model.EventName
+                </p>
+            
+
+            <br />
+
+            <a asp-action="index" class="btn btn-outline-dark">Go Back</a>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

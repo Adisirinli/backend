@@ -1,0 +1,36 @@
+﻿
+@model List<BasketVM>
+
+<br />
+<br />
+<br />
+<br />
+    <br/>
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th class="image">image</th>
+            <th class="course">CourseName</th>
+            <th class="price">Price</th>
+            <th class="quantity">Quantity</th>
+            <th class="total">Total</th>
+            <th class="delete">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model)
+        {
+            <tr>
+                <th><img width="100px" src="~/img/course/@item.ImageUrl" /></th>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.BasketCount</td>
+                <td>@item.TotalPrice</td>
+                <td course-id="@item.Id" class="course-delete"><button>X</button></td>
+            </tr>
+
+        }
+    </tbody>
+</table>

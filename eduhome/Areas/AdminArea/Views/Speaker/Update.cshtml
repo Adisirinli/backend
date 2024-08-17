@@ -1,0 +1,50 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.SpeakerVMs
+@model SpeakerUpdateVM
+
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Speaker Update form</h4>
+                <form enctype="multipart/form-data" asp-action="update" method="post" class="forms-sample">
+                    <img src="~/img/event/@Model.Image" width="300" height="150" />
+
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span> @* //errorlari gosderir *@
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Position"></label>
+                        <input asp-for="Position" class="form-control" placeholder="Position">
+                        <span class="text-danger" asp-validation-for="Position"></span> @* //errorlari gosderir *@
+
+                    </div>
+
+                 
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input asp-for="Photo" class="form-control" placeholder="Price">
+                        <span class="text-danger" asp-validation-for="Photo"></span> @* //errorlari gosderir *@
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Events</label>
+                        <select class="form-select form-select-lg" asp-for="EventId" asp-items="@ViewBag.Events">
+                        </select>
+                    </div>
+                 
+
+
+
+                    <button type="submit" class="btn btn-primary mr-2">Update</button>
+                    <a asp-action="index" class="btn btn-light">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}
+

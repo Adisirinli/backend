@@ -1,0 +1,71 @@
+﻿@model AppUser
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+            <br />
+            <h4>UserId:</h4><p>@Model.Id</p>
+            <br />
+            <br />
+            <h4>FullName:</h4><p>@Model.FullName</p>
+            <br />
+            <h4>UserName:</h4>
+            <p>@Model.UserName</p>
+
+            <br />
+            <h4>Email:</h4>
+            <p>@Model.Email</p>
+
+            <br />
+            <h4>EmailConfirmed:</h4>
+            @if (Model.EmailConfirmed)
+            {
+                <p class="text-success">Confirmed</p>
+            }
+            else
+            {
+                <p class="text-danger">Not Confirmed</p>
+
+            }
+            <br />
+            <h4>IsBlocked:</h4>
+            @if (!Model.IsBlocked)
+            {
+                <p class="text-success">Active</p>
+            }
+            else
+            {
+                <p class="text-danger">Blocked</p>
+            }
+            <br />
+
+            <br />
+            <h4>ConnectionID:</h4>
+            @if (string.IsNullOrEmpty(Model.ConnectionId))
+            {
+                <p class="text-danger">Not Connected to Server</p>
+            }
+            else
+            {
+                <p class="text-success">@Model.ConnectionId</p>
+            }
+            <br />
+            <h4>PhoneNumber:</h4>
+
+            @if (!Model.PhoneNumberConfirmed)
+            {
+                <p class="text-danger">Not confirmed</p>
+            }
+            else
+            {
+                <p class="text-success">Confirmed</p>
+                <p class="text-dark">@Model.PhoneNumber</p>
+
+            }
+            <a asp-action="index" class="btn btn-outline-dark">Go Back</a>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

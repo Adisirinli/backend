@@ -1,0 +1,82 @@
+﻿@using BackEndProject_Edu.Views.Shared.Components
+@model HeaderVM
+<header class="top">
+    <div class="header-area header-sticky fixed">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/img/logo/@Model.Settings["Logo"]" alt="eduhome" /></a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="content-wrapper one">
+                        <!-- Main Menu Start -->
+                        <div class="main-menu one text-right">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a href="">Home</a>
+                                        <ul>
+                                            <li><a href="/adminarea">AdminPanel</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li><a href="/about">About</a></li>
+                                    <li>
+                                        <a asp-controller="course" asp-action="index">courses</a>
+                                        <ul>
+                                            <li><a asp-controller="course" asp-action="index">courses</a></li>
+                                            <li><a asp-controller="course" asp-action="detail" asp-route-id="1">courses details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/event">event</a>
+                                        <ul>
+                                            <li><a href="/event">event</a></li>
+
+                                            <li><a href="/event/detail/1">event details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="hidden-sm">
+                                        <a href="teacher">teacher</a>
+                                        <ul>
+                                            <li><a href="/teacher">teacher</a></li>
+                                            <li><a href="/teacher/detail/1">teacher details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a <a asp-controller="blog" asp-action="index">blog</a>
+                                        <ul>
+                                            <li><a asp-controller="blog" asp-action="index">blog</a></li>
+
+                                            <li><a asp-controller ="blog" asp-action="detail" asp-route-id="1">blog details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/basket/index">Buy Now</a></li>
+                                  
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <a class="count">@Model.BasketCount </a>
+                                        <li>@ViewBag.FullName</li>
+                                        <a href="/account/logout">Log out</a>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="/account/login">login</a></li>
+                                        <li><a href="/account/register">Register</a></li>
+                                    }
+                                   
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu hidden-lg hidden-md one"></div>
+                        <!-- Main Menu End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,29 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.BlogVMs
+@model BlogDetailVM
+<div class="container">
+    <div class="row">
+        <div class="card-body">
+
+
+            <img src="~/img/blog/@Model.Photo" width="300" height="150" />
+
+            <br />
+            <h4>Name:</h4><p>@Model.Name</p>
+            <br />
+            <h4>Description:</h4>
+            <p>@Model.Desc</p>
+
+            <br />
+            <h4>@Model.Date?.ToString("dd.MM.yyyy")</h4>
+
+
+            <br />
+
+            <a asp-action="index" class="btn btn-outline-dark">Go Back</a>
+
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}

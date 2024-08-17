@@ -1,0 +1,39 @@
+﻿@using BackEndProject_Edu.Areas.AdminArea.ViewModels.EventVMs
+@model EventCreateVM
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Event Create form</h4>
+                <form enctype="multipart/form-data" asp-action="create" method="post" class="forms-sample">
+                    <div class="form-group">
+                        <label asp-for="Name"></label>
+                        <input asp-for="Name" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Name"></span> @* //errorlari gosderir *@
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Desc"></label>
+                        <input asp-for="Desc" class="form-control" placeholder="Description">
+                        <span class="text-danger" asp-validation-for="Desc"></span> @* //errorlari gosderir *@
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Venue"></label>
+                        <input asp-for="Venue" class="form-control" placeholder="Description">
+                        <span class="text-danger" asp-validation-for="Venue"></span> @* //errorlari gosderir *@
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ImgUrl"></label>
+                        <input asp-for="ImgUrl" class="form-control" placeholder="Description">
+                        <span class="text-danger" asp-validation-for="ImgUrl"></span> @* //errorlari gosderir *@
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Create</button>
+                    <a asp-action="index" class="btn btn-light">Go Back</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section script {
+    <partial name="_ValidationPartial"></partial>
+}
